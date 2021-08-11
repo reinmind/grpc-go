@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "greeter_client"
+		},
+		{
+			"path": "greeter_server"
+		},
+		{
+			"path": "helloworld"
+		}
+	],
+	"settings": {}
+}

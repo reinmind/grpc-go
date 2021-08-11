@@ -31,7 +31,7 @@ import (
 
 const (
 	address     = "localhost:50051"
-	defaultName = "world"
+	defaultName = "giligili"
 )
 
 func main() {
@@ -51,8 +51,13 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 	r, err := c.SayHello(ctx, &pb.HelloRequest{Name: name})
+	hr, err2 := c.SayHelloAgain(ctx, &pb.HelloRequest{Name: name})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
+	if err2 != nil {
+		log.Fatalf("could not greet again: %v", err2)
+	}
+	log.Printf("Gretting Again: %s", hr.GetMessage())
 	log.Printf("Greeting: %s", r.GetMessage())
 }
